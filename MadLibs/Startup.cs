@@ -26,7 +26,7 @@ namespace MadLibs
     public void Configure(IApplicationBuilder app)
     {
       app.UseRouting();
-
+      app.UseStaticFiles();
       app.UseDeveloperExceptionPage();
 
       app.UseEndpoints(routes =>
@@ -34,10 +34,10 @@ namespace MadLibs
         routes.MapControllerRoute("default", "{controller=Home}/{action=Index}/{id?}");
       });
 
-      app.Run(async (context) =>
-      {
-        await context.Response.WriteAsync("Hello World");
-      });
+      // app.Run(async (context) =>
+      // {
+      //   await context.Response.WriteAsync("Hello World");
+      // });
     }
   }
 }
